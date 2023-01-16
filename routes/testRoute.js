@@ -4,6 +4,7 @@ const client = require('twilio')(process.env.ACCOUNT_SID, process.env.AUTH_TOKEN
 
 let numberVerification = ""
 router.post('/mobile', (req, res) => {
+    console.log(req.body);
     let numberVerification = req.body.number;
     client.verify
         .services(process.env.SERVICE_SID)
